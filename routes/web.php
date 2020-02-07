@@ -61,3 +61,8 @@ Route::get('/home/sale/{id}/delete', 'Backend\SaleController@destroy')->name('sa
 
 Route::post('/home/item/search','Backend\ItemController@search');
 Route::get('/api','Backend\ItemController@api');
+
+Route::get('/live_search', 'LiveSearch@index');
+Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+Route::get('/laxmi','Backend\ItemController@create');
+

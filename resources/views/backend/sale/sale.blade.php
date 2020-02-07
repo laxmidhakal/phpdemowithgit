@@ -51,6 +51,7 @@
                     @endforeach
                   </select>
                   <input type="text" name="item_p" class="form-control" id="item_p">
+                  <img id="loaderDiv" src="{{URL::to('/')}}/images/giphy.gif" style="display:none;"/>
                 </div>
               
               

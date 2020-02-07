@@ -27,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
 
 </head>
@@ -172,6 +173,7 @@
             event.preventDefault();
     }
 </script>
+
 <script type="text/javascript">
     $(document).on('change', '#item_id', function(event) {
 // console.log('abc');
@@ -184,15 +186,23 @@ data: {
     "_token": "{{ csrf_token() }}",
     item_id: item_id,
 },
+ beforeSend: function() {
+        $("#loaderDiv").show();
+    },
 
-ajaxStart: function() { $item_id.addClass("loading");    },
- ajaxStop: function() { $item_id.removeClass("loading"); }  ,
+
 success:function(data){
     $("#item_p").val(data[0].sale_price);
+     $("#loaderDiv").hide();
 }
+
+
 });
 });
+
 </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/js/bootstrap-colorpicker.min.js"></script> 
+
 
 
 

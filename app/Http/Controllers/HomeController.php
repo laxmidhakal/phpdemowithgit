@@ -29,7 +29,7 @@ class HomeController extends Controller
         $categories = Category::orderBy('id','DESC')->get();
         $count=count($categories);
        
-        return view('home', compact(['categories','count']));
+        return view('backend.home', compact(['categories','count']));
 
     }
 }

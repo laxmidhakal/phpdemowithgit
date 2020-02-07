@@ -24,9 +24,9 @@ class CategoryController extends Controller
     {
         
         $categories = Category::orderBy('id','DESC')->get();
-        $count=count('$categories');
+        
        
-        return view('backend.category', compact(['categories','count']));
+        return view('backend.category', compact(['categories']));
     }
 
     /**
